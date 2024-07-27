@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Baloo 2', cursive;
+  font-family: 'Poppins', sans-serif;
+  background-image: url(indexback.jpg);
+  color: whitesmoke;
+}
+
+.container-fluid {
+  color: white;
+}
+
+#app {
+  font-size: 20px;
+  background-color: beige;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+#app:hover {
+  font-size: 1.3rem;
+}
+
+#card1,
+#card2,
+#card3 {
+  animation: fadeIn 2s;
+}
+
+#card1 {
+  background-image: linear-gradient(
+    150deg,
+    rgb(218, 50, 17),
+    rgb(220, 236, 104)
+  );
+}
+
+#card2 {
+  background-image: linear-gradient(
+    150deg,
+    rgb(162, 217, 242),
+    rgb(213, 217, 201)
+  );
+}
+
+#card3 {
+  background-image: linear-gradient(
+    150deg,
+    rgb(80, 106, 118),
+    rgb(213, 217, 201)
+  );
+}
+
+#cardsli1 > li,
+#cardsli2 > li,
+#cardsli3 > li {
+  font-size: 18px;
+  padding: 5px;
+}
+
+#cardsli1 > li {
+  background-image: linear-gradient(
+    150deg,
+    rgb(218, 50, 17),
+    rgb(220, 236, 104)
+  );
+}
+
+#cardsli2 > li {
+  background-image: linear-gradient(
+    150deg,
+    rgb(162, 217, 242),
+    rgb(213, 217, 201)
+  );
+}
+
+#cardsli3 > li {
+  background-image: linear-gradient(
+    150deg,
+    rgb(80, 106, 118),
+    rgb(213, 217, 201)
+  );
+}
+
+#cards {
+  background-color: rgb(225, 221, 216);
+}
+
+#cities {
+  font-size: 20px;
+  color: rgb(17, 97, 97);
+}
+
+#above {
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid rgb(73, 6, 6);
+}
+
+.belowdiv {
+  border: 2px solid black;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    font-size: medium;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card h4 {
+    font-size: 1.25rem;
+  }
+
+  .navbar .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .container-fluid {
+    padding: 0 15px;
+  }
+}

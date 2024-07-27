@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0" id="nav">
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary"
+      style="font-weight: bolder; font-size: larger; opacity: 0.9"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="app">Weather App</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="usedemo.txt">About This App</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search The City"
+              aria-label="Search"
+            />
+            <button id="submitx" class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary border-2">
+            <div class="card-header py-3 text-black border-primary" id="card1">
+              <h4 class="my-0 fw-normal">Temperature</h4>
+            </div>
+            <div class="card-body" id="cards">
+              <h1 class="card-title pricing-card-title">
+                <span id="maintemp"></span
+                ><small class="text-muted fw-light">°C</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4" id="cardsli1">
+                <li>Temperature is: <span id="temp"></span></li>
+                <li>Min Temperature is: <span id="min_temp"></span></li>
+                <li>Max Temperature is: <span id="max_temp"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary border-2">
+            <div
+              class="card-header py-3 text-black bg-primary border-primary"
+              id="card2"
+            >
+              <h4 class="my-0 fw-normal">Humidity Information</h4>
+            </div>
+            <div class="card-body" id="cards">
+              <h1 class="card-title pricing-card-title">
+                <span id="mainhumidity"></span
+                ><small class="text-muted fw-light">%</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4" id="cardsli2">
+                <li>Feels Like is: <span id="feels_like"></span></li>
+                <li>Humidity is: <span id="humidity"></span></li>
+                <li>Wind Speed is: <span id="wind_speed"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div
+              class="card-header py-3 text-black bg-primary border-primary border-2"
+              id="card3"
+            >
+              <h4 class="my-0 fw-normal">Wind Information</h4>
+            </div>
+            <div class="card-body" id="cards">
+              <h1 class="card-title pricing-card-title">
+                <span id="mainspeed"></span
+                ><small class="text-muted fw-light">km/h</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4" id="cardsli3">
+                <li>Wind Degree is: <span id="wind_degrees"></span></li>
+                <li>Sunrise Time is: <span id="sunrise"></span></li>
+                <li>Sunset Time is: <span id="sunset"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2
+        class="display-6 text-center mb-4"
+        style="
+          background-image: linear-gradient(
+            150deg,
+            rgb(218, 188, 17),
+            rgb(104, 236, 205)
+          );
+          border-radius: 5px;
+        "
+      >
+        Weather of other cities
+      </h2>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr id="above">
+              <th scope="row" class="text-start" id="cities">Cities</th>
+              <th>Temperature</th>
+              <th>Min_temp</th>
+              <th>Max_temp</th>
+              <th>Feels_like</th>
+              <th>Humidity</th>
+              <th>Sunrise</th>
+              <th>Sunset</th>
+              <th>Wind_degree</th>
+              <th>Wind_speed</th>
+            </tr>
+          </thead>
+          <tbody class="belowdiv">
+            <tr>
+              <th scope="row" class="text-start" id="cities">New York</th>
+              <td id="feels_like1">1</td>
+              <td id="humidity1">1</td>
+              <td id="max_temp1">1</td>
+              <td id="min_temp1">1</td>
+              <td id="sunrise1">1</td>
+              <td id="sunset1">1</td>
+              <td id="temp1">1</td>
+              <td id="wind_degrees1">1</td>
+              <td id="wind_speed1">1</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start" id="cities">Uttarakhand</th>
+              <td id="feels_like2">1</td>
+              <td id="humidity2">1</td>
+              <td id="max_temp2">1</td>
+              <td id="min_temp2">1</td>
+              <td id="sunrise2">1</td>
+              <td id="sunset2">1</td>
+              <td id="temp2">1</td>
+              <td id="wind_degrees2">1</td>
+              <td id="wind_speed2">1</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start" id="cities">Bangalore</th>
+              <td id="feels_like3">1</td>
+              <td id="humidity3">1</td>
+              <td id="max_temp3">1</td>
+              <td id="min_temp3">1</td>
+              <td id="sunrise3">1</td>
+              <td id="sunset3">1</td>
+              <td id="temp3">1</td>
+              <td id="wind_degrees3">1</td>
+              <td id="wind_speed3">1</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start" id="cities">Tokyo</th>
+              <td id="feels_like4">1</td>
+              <td id="humidity4">1</td>
+              <td id="max_temp4">1</td>
+              <td id="min_temp4">1</td>
+              <td id="sunrise4">1</td>
+              <td id="sunset4">1</td>
+              <td id="temp4">1</td>
+              <td id="wind_degrees4">1</td>
+              <td id="wind_speed4">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+      <div class="container text-center">
+        <span>&copy; 2024 Sumit Singh Kaintura. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
